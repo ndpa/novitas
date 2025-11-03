@@ -86,7 +86,7 @@ export default function Home() {
                 required
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full px-4 py-2 bg-black border-2 border-[#049339] text-[#A6CE9A] rounded focus:outline-none focus:border-[#A6CE9A]"
+                className="w-full px-4 py-2 bg-black border-2 border-[#049339] text-[#A6CE9A] rounded-lg focus:outline-none focus:border-[#A6CE9A]"
               />
             </div>
             <div>
@@ -99,7 +99,7 @@ export default function Home() {
                 required
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full px-4 py-2 bg-black border-2 border-[#049339] text-[#A6CE9A] rounded focus:outline-none focus:border-[#A6CE9A]"
+                className="w-full px-4 py-2 bg-black border-2 border-[#049339] text-[#A6CE9A] rounded-lg focus:outline-none focus:border-[#A6CE9A]"
               />
             </div>
           </div>
@@ -146,7 +146,7 @@ export default function Home() {
               rows={6}
               value={formData.dietary}
               onChange={(e) => setFormData({ ...formData, dietary: e.target.value })}
-              className="w-full px-4 py-2 bg-black border-2 border-[#049339] text-[#A6CE9A] rounded focus:outline-none focus:border-[#A6CE9A] resize-none"
+              className="w-full px-4 py-2 bg-black border-2 border-[#049339] text-[#A6CE9A] rounded-lg focus:outline-none focus:border-[#A6CE9A] resize-none"
               placeholder="Optional: Bitte hier eintragen..."
             />
           </div>
@@ -156,7 +156,7 @@ export default function Home() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="px-8 py-3 bg-[#049339] text-white font-bold rounded-lg hover:bg-[#A6CE9A] hover:text-black transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="px-8 py-3 bg-[#049339] text-white font-bold rounded-lg  cursor-pointer hover:bg-[#A6CE9A] hover:text-[#049339] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSubmitting ? "Wird gesendet..." : "Absenden"}
             </button>
