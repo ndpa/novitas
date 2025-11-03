@@ -1,0 +1,7 @@
+I want a homepage that invitees to our Christmas party can visit in order to accept the invitation and notify us about any dietary restrictions.
+It should display a photo at the top which is a greeting card and below should be three calls to action. 
+One should be a free text field named "Name", the other should be named “E-Mail” and the last should be called “Zu berücksichtigende Unverträglichkeiten/Allergien/Ernährungsgewohnheiten”. The fields for Name and E-Mail should be next to each other and right below should be two options with radio buttons “Ich komme gern” und “Ich kann leider nicht teilnehmen”. Below the radio buttons should be the third field Zu berücksichtigende Unverträglichkeiten/Allergien/Ernährungsgewohnheiten. This field should be larger (6 lines) while the other fields are just one line. In the bottom there should be a button that says “Absenden”. The homepage should have a black background and the text should be green (#A6CE9A and #049339).
+
+Look at the image in Novitas_Weihn_Einladung_2025.jpg
+
+Also, implement the logo I have on the site: logo_novitas.png
