@@ -139,7 +139,7 @@ export default function Home() {
           {/* Dietary Restrictions */}
           <div>
             <label htmlFor="dietary" className="block text-[#A6CE9A] mb-2 font-medium">
-              Zu berücksichtigende Unverträglichkeiten/Allergien/Ernährungsgewohnheiten
+            Unverträglichkeiten/ Allergien/ vegetarische Option?
             </label>
             <textarea
               id="dietary"
