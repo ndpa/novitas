@@ -47,7 +47,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-black flex flex-col items-center py-8 px-4">
+    <div className="min-h-screen bg-[#210509] flex flex-col items-center py-8 px-4">
       {/* Logo */}
       <div className="mb-8">
         <Image
@@ -62,10 +62,10 @@ export default function Home() {
       {/* Greeting Card */}
       <div className="w-full max-w-3xl mb-8">
         <Image
-          src="/Novitas_Weihn_Einladung_2025.jpg"
-          alt="Weihnachtseinladung"
-          width={1000}
-          height={600}
+          src="/Novitas_Weihn_Einladung_2026.png"
+          alt="Weihnachtseinladung: ALLE JAHRE WIEDER. Donnerstag, 10. Dezember 2026 um 18:30 Uhr, Zum Dorfkrug, Alte Landstraße 47, 22949 Ammersbek. Antwort bitte bis spätestens 18. November 2026."
+          width={2000}
+          height={1200}
           className="w-full h-auto rounded-lg"
           priority
         />
@@ -77,7 +77,7 @@ export default function Home() {
           {/* Name and Email in a row */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label htmlFor="name" className="block text-[#A6CE9A] mb-2 font-medium">
+              <label htmlFor="name" className="block text-[#EACB83] mb-2 font-medium">
                 Name
               </label>
               <input
@@ -86,11 +86,11 @@ export default function Home() {
                 required
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full px-4 py-2 bg-black border-2 border-[#049339] text-[#A6CE9A] rounded-lg focus:outline-none focus:border-[#A6CE9A]"
+                className="w-full px-4 py-2 bg-[#210509] border-2 border-[#D8895F] text-[#EACB83] rounded-lg focus:outline-none focus:border-[#F3C56A]"
               />
             </div>
             <div>
-              <label htmlFor="email" className="block text-[#A6CE9A] mb-2 font-medium">
+              <label htmlFor="email" className="block text-[#EACB83] mb-2 font-medium">
                 E-Mail
               </label>
               <input
@@ -99,7 +99,7 @@ export default function Home() {
                 required
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full px-4 py-2 bg-black border-2 border-[#049339] text-[#A6CE9A] rounded-lg focus:outline-none focus:border-[#A6CE9A]"
+                className="w-full px-4 py-2 bg-[#210509] border-2 border-[#D8895F] text-[#EACB83] rounded-lg focus:outline-none focus:border-[#F3C56A]"
               />
             </div>
           </div>
@@ -114,9 +114,9 @@ export default function Home() {
                 value="coming"
                 checked={formData.attendance === "coming"}
                 onChange={(e) => setFormData({ ...formData, attendance: e.target.value })}
-                className="w-4 h-4 accent-[#049339]"
+                className="w-4 h-4 accent-[#F3C56A]"
               />
-              <label htmlFor="coming" className="ml-3 text-[#A6CE9A] font-medium">
+              <label htmlFor="coming" className="ml-3 text-[#EACB83] font-medium">
                 Ich komme gern
               </label>
             </div>
@@ -128,9 +128,9 @@ export default function Home() {
                 value="not-coming"
                 checked={formData.attendance === "not-coming"}
                 onChange={(e) => setFormData({ ...formData, attendance: e.target.value })}
-                className="w-4 h-4 accent-[#049339]"
+                className="w-4 h-4 accent-[#F3C56A]"
               />
-              <label htmlFor="not-coming" className="ml-3 text-[#A6CE9A] font-medium">
+              <label htmlFor="not-coming" className="ml-3 text-[#EACB83] font-medium">
                 Ich kann leider nicht teilnehmen
               </label>
             </div>
@@ -138,7 +138,7 @@ export default function Home() {
 
           {/* Dietary Restrictions */}
           <div>
-            <label htmlFor="dietary" className="block text-[#A6CE9A] mb-2 font-medium">
+            <label htmlFor="dietary" className="block text-[#EACB83] mb-2 font-medium">
             Unverträglichkeiten/ Allergien/ vegetarische Option?
             </label>
             <textarea
@@ -146,7 +146,7 @@ export default function Home() {
               rows={6}
               value={formData.dietary}
               onChange={(e) => setFormData({ ...formData, dietary: e.target.value })}
-              className="w-full px-4 py-2 bg-black border-2 border-[#049339] text-[#A6CE9A] rounded-lg focus:outline-none focus:border-[#A6CE9A] resize-none"
+              className="w-full px-4 py-2 bg-[#210509] border-2 border-[#D8895F] text-[#EACB83] rounded-lg focus:outline-none focus:border-[#F3C56A] resize-none"
               placeholder="Optional: Bitte hier eintragen..."
             />
           </div>
@@ -156,18 +156,18 @@ export default function Home() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="px-8 py-3 bg-[#049339] text-white font-bold rounded-lg  cursor-pointer hover:bg-[#A6CE9A] hover:text-[#049339] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="px-8 py-3 bg-[#F3C56A] text-[#210509] font-bold rounded-lg  cursor-pointer hover:bg-[#D8895F] hover:text-[#210509] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSubmitting ? "Wird gesendet..." : "Absenden"}
             </button>
 
             {submitStatus === "success" && (
-              <p className="text-[#A6CE9A] font-medium">
+              <p className="text-[#EACB83] font-medium">
                 Vielen Dank! Ihre Antwort wurde erfolgreich übermittelt.
               </p>
             )}
             {submitStatus === "error" && (
-              <p className="text-red-500 font-medium">
+              <p className="text-red-400 font-medium">
                 Es gab einen Fehler beim Senden. Bitte versuchen Sie es erneut.
               </p>
             )}

@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Novitas Weihnachtsfeier 2025",
-  description: "Einladung zur Novitas Weihnachtsfeier am 04. Dezember 2025",
+  title: "Novitas Weihnachtsfeier 2026",
+  description: "Einladung zur Novitas Weihnachtsfeier am 10. Dezember 2026",
 };
 
 export default function RootLayout({
@@ -23,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="de">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
