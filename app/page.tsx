@@ -47,7 +47,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-[#1C060A] flex flex-col items-center py-8 px-4">
+    <div className="min-h-screen bg-[#1B060B] flex flex-col items-center py-8 px-4">
       {/* Logo */}
       <div className="mb-8">
         <Image
@@ -86,7 +86,7 @@ export default function Home() {
                 required
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full px-4 py-2 bg-[#1C060A] border-2 border-[#D8895F] text-[#D8895F] rounded-lg focus:outline-none focus:border-[#E9A27C]"
+                className="w-full px-4 py-2 bg-[#1B060B] border-2 border-[#D8895F] text-[#D8895F] rounded-lg focus:outline-none focus:border-[#E9A27C]"
               />
             </div>
             <div>
@@ -99,7 +99,7 @@ export default function Home() {
                 required
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full px-4 py-2 bg-[#1C060A] border-2 border-[#D8895F] text-[#D8895F] rounded-lg focus:outline-none focus:border-[#E9A27C]"
+                className="w-full px-4 py-2 bg-[#1B060B] border-2 border-[#D8895F] text-[#D8895F] rounded-lg focus:outline-none focus:border-[#E9A27C]"
               />
             </div>
           </div>
@@ -146,7 +146,7 @@ export default function Home() {
               rows={6}
               value={formData.dietary}
               onChange={(e) => setFormData({ ...formData, dietary: e.target.value })}
-              className="w-full px-4 py-2 bg-[#1C060A] border-2 border-[#D8895F] text-[#D8895F] rounded-lg focus:outline-none focus:border-[#E9A27C] resize-none placeholder:text-[#D8895F]/60"
+              className="w-full px-4 py-2 bg-[#1B060B] border-2 border-[#D8895F] text-[#D8895F] rounded-lg focus:outline-none focus:border-[#E9A27C] resize-none placeholder:text-[#D8895F]/60"
               placeholder="Optional: Bitte hier eintragen..."
             />
           </div>
@@ -156,7 +156,7 @@ export default function Home() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="px-8 py-3 bg-[#D8895F] text-[#1C060A] font-bold rounded-lg  cursor-pointer hover:bg-[#E9A27C] hover:text-[#1C060A] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="px-8 py-3 bg-[#D8895F] text-[#1B060B] font-bold rounded-lg  cursor-pointer hover:bg-[#E9A27C] hover:text-[#1B060B] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSubmitting ? "Wird gesendet..." : "Absenden"}
             </button>
