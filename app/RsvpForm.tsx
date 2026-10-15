@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { CalendarButtons } from "./invite/RsvpCard";
 
 export default function RsvpForm() {
   const [formData, setFormData] = useState({
@@ -11,6 +12,7 @@ export default function RsvpForm() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(null);
+  const [wasComing, setWasComing] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -27,6 +29,7 @@ export default function RsvpForm() {
       });
 
       if (response.ok) {
+        setWasComing(formData.attendance === "coming");
         setSubmitStatus("success");
         setFormData({
           name: "",
@@ -35,6 +38,7 @@ export default function RsvpForm() {
           dietary: "",
         });
       } else {
+        console.error("RSVP failed:", response.status, await response.text());
         setSubmitStatus("error");
       }
     } catch (error) {
@@ -136,9 +140,17 @@ export default function RsvpForm() {
           </button>
 
           {submitStatus === "success" && (
-            <p className="text-[#D8895F] font-medium">
-              Vielen Dank! Ihre Antwort wurde erfolgreich übermittelt.
-            </p>
+            <div className="flex flex-col items-center gap-4 text-center">
+              <p className="text-[#D8895F] font-medium">
+                Vielen Dank! Ihre Antwort wurde erfolgreich übermittelt.
+              </p>
+              {wasComing && (
+                <>
+                  <p className="text-[#D8895F]">Termin direkt im Kalender speichern:</p>
+                  <CalendarButtons />
+                </>
+              )}
+            </div>
           )}
           {submitStatus === "error" && (
             <p className="text-red-400 font-medium">

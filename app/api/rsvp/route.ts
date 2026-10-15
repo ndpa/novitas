@@ -37,6 +37,17 @@ export async function POST(request: NextRequest) {
     // Prepare the comment field (dietary restrictions)
     const kommentar = body.dietary || "";
 
+    const missing = ["GOOGLE_CLIENT_EMAIL", "GOOGLE_PRIVATE_KEY", "GOOGLE_SHEET_ID"].filter(
+      (key) => !process.env[key]
+    );
+    if (missing.length) {
+      console.error("RSVP: missing environment variables:", missing.join(", "));
+      return NextResponse.json(
+        { error: "Server not configured", detail: `Missing env: ${missing.join(", ")}` },
+        { status: 500 }
+      );
+    }
+
     // Set up Google Sheets API
     const auth = new google.auth.GoogleAuth({
       credentials: {
@@ -82,8 +93,10 @@ export async function POST(request: NextRequest) {
 
   } catch (error) {
     console.error("Error processing RSVP:", error);
+    // Google's message says what's wrong (bad range, no permission, bad key, ...)
+    const detail = error instanceof Error ? error.message : String(error);
     return NextResponse.json(
-      { error: "Internal server error" },
+      { error: "Internal server error", detail },
       { status: 500 }
     );
   }

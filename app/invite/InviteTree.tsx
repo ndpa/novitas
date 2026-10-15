@@ -70,7 +70,7 @@ function seeded(seed: number) {
   };
 }
 
-export default function InviteTree({ className }: { className?: string }) {
+export default function InviteTree({ className, dust = true }: { className?: string; dust?: boolean }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -226,7 +226,7 @@ export default function InviteTree({ className }: { className?: string }) {
       }
 
       // Gold dust
-      const dustIn = still ? 1 : smooth(1.4, 3.2, time);
+      const dustIn = !dust ? 0 : still ? 1 : smooth(1.4, 3.2, time);
       if (dustIn > 0) {
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
         ctx.fillStyle = "rgb(250,222,160)";
@@ -267,7 +267,7 @@ export default function InviteTree({ className }: { className?: string }) {
       cancelAnimationFrame(frame);
       observer.disconnect();
     };
-  }, []);
+  }, [dust]);
 
   return <canvas ref={canvasRef} aria-hidden="true" className={className} />;
 }
