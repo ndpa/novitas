@@ -1,8 +1,10 @@
 import Image from "next/image";
-import { Noto_Sans } from "next/font/google";
+import { Noto_Sans, Open_Sans } from "next/font/google";
 import InviteTree from "./InviteTree";
 
 export const noto = Noto_Sans({ subsets: ["latin"], weight: ["400", "700"] });
+// Same design as Noto Sans, but its capital I is a plain bar without crossbars.
+const openSans = Open_Sans({ subsets: ["latin"], weight: ["700"] });
 
 export const delay = (s: number) => ({ animationDelay: `${s}s` });
 
@@ -23,7 +25,7 @@ export default function InviteHero({ children }: { children?: React.ReactNode })
 
       <section className="relative min-h-[62svh] flex-1 md:min-h-[60svh]">
         <InviteTree className="absolute inset-0 h-full w-full" />
-        <h1 className="absolute inset-x-0 bottom-2 text-center text-[2.6rem] font-bold leading-[1.05] tracking-[0.01em] md:inset-x-auto md:bottom-auto md:left-[6vw] md:top-[52%] md:text-left md:text-[clamp(3rem,5.6vw,5.75rem)]">
+        <h1 className={`${openSans.className} absolute inset-x-0 bottom-2 text-center text-[2.6rem] font-bold leading-[1.05] tracking-[0.01em] md:inset-x-auto md:bottom-auto md:left-[6vw] md:top-[52%] md:text-left md:text-[clamp(3rem,5.6vw,5.75rem)]`}>
           <span className="invite-rise block" style={delay(1.5)}>
             ALLE JAHRE
           </span>

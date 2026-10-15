@@ -232,7 +232,7 @@ export default function InviteTree({ className }: { className?: string }) {
         ctx.fillStyle = "rgb(250,222,160)";
         for (const p of particles) {
           const travel = still ? 0 : p.vy * time;
-          let y = p.y - travel;
+          let y = p.y + travel;
           const span = baseY - apexY + 40;
           y = apexY - 20 + ((((y - (apexY - 20)) % span) + span) % span);
           const x = p.x + Math.sin(time * p.freq + p.phase) * p.sway;
